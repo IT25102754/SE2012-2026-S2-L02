@@ -21,21 +21,21 @@ public class Main {
             System.out.println("3. Search Student by ID");
             System.out.println("4. Sort Students by Name");
             System.out.println("5. Exit");
-            System.out.print("Enter option (1-5): ");
+            System.out.print("Enter choice (1-5): ");
 
             if (!scanner.hasNextInt()) {
-                System.out.println("Invalid input. Please enter a number.");
+                System.out.println("Invalid");
                 scanner.next();
                 continue;
             }
 
             int choice = scanner.nextInt();
-            scanner.nextLine(); // Clear newline buffer
+            scanner.nextLine();
 
             switch (choice) {
                 case 1:
                     if (studentCount >= MAX_STUDENTS) {
-                        System.out.println("Error: Student record limit reached.");
+                        System.out.println("Error");
                         break;
                     }
                     System.out.print("Enter Student ID: ");
@@ -61,7 +61,7 @@ public class Main {
 
                 case 3:
                     if (studentCount == 0) {
-                        System.out.println("No students available to search.");
+                        System.out.println("No students available.");
                         break;
                     }
                     System.out.print("Enter Student ID to Search: ");
