@@ -4,8 +4,17 @@ import models.Student;
 import services.EnrollmentManager;
 import java.util.Scanner;
 
+/**
+ * Main application class providing an interactive console menu 
+ * for managing student records.
+ */
 public class Main {
 
+    /**
+     * Entry point of the Student Management System.
+     *
+     * @param args command line arguments (unused)
+     */
     public static void main(String[] args) {
         final int MAX_STUDENTS = 100;
         Student[] students = new Student[MAX_STUDENTS];
@@ -21,7 +30,7 @@ public class Main {
             System.out.println("3. Search Student by ID");
             System.out.println("4. Sort Students by Name");
             System.out.println("5. Exit");
-            System.out.print("Enter choice (1-5): ");
+            System.out.print("Enter option (1-5): ");
 
             if (!scanner.hasNextInt()) {
                 System.out.println("Invalid");
@@ -30,7 +39,7 @@ public class Main {
             }
 
             int choice = scanner.nextInt();
-            scanner.nextLine();
+            scanner.nextLine(); 
 
             switch (choice) {
                 case 1:
@@ -90,8 +99,10 @@ public class Main {
                     break;
 
                 default:
-                    System.out.println("Invalid");
+                    System.out.println("Invalid selection");
             }
         }
+
+        scanner.close();
     }
 }
